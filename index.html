@@ -1,0 +1,2540 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="المخمل الملكي - أثاث فاخر وكنب ملكي في الرياض. فخامة ترى ووراحة تحس. شحن لجميع أنحاء المملكة العربية السعودية.">
+<meta name="keywords" content="كنب ملكي, أثاث فاخر, مخمل, الرياض, أثاث السعودية, كنب مخمل, غرف جلوس فاخرة, أثاث ملكي, كنب رياض, أثاث مجالس, ديكور فاخر, المخمل الملكي">
+<meta name="author" content="المخمل الملكي">
+<meta property="og:title" content="المخمل الملكي - فخامة ترى ووراحة تحس">
+<meta property="og:description" content="أرقى الأثاث المخملي الفاخر في الرياض والمملكة العربية السعودية">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<title>المخمل الملكي | فخامة ترى ووراحة تحس | الرياض</title>
+
+<!-- Bootstrap RTL -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.rtl.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<!-- AOS Animation -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<!-- Swiper -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
+
+<style>
+/* ===========================
+   CSS VARIABLES & ROOT
+=========================== */
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C96A;
+  --gold-dark: #9A7A2A;
+  --navy: #0A1628;
+  --navy-mid: #122040;
+  --navy-light: #1a2a4a;
+  --navy-card: #0f1e3a;
+  --white: #ffffff;
+  --off-white: #f8f5ee;
+  --text-muted: #8a9bb5;
+  --shadow-gold: 0 0 30px rgba(201,168,76,0.3);
+  --shadow-deep: 0 20px 60px rgba(0,0,0,0.5);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ===========================
+   GLOBAL RESET & BASE
+=========================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  overflow-x: hidden;
+  direction: rtl;
+}
+section{
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 { font-family: 'Cairo', sans-serif; }
+
+::selection { background: var(--gold); color: var(--navy); }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--navy); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* ===========================
+   GOLD TEXT & SHIMMER
+=========================== */
+.gold-text {
+  color: var(--gold);
+}
+
+.gold-shimmer {
+  background: linear-gradient(90deg, var(--gold-dark) 0%, var(--gold-light) 40%, var(--gold) 60%, var(--gold-dark) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.gold-line {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto 1rem;
+}
+
+.gold-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  margin: 1rem 0;
+}
+.gold-divider::before,
+.gold-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+.gold-divider::after {
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+/* ===========================
+   FLOATING PARTICLES
+=========================== */
+#particles-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar {
+  background: rgba(10, 22, 40, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  padding: 14px 0;
+  position: fixed;
+  top: 0; width: 100%;
+  z-index: 1000;
+  transition: var(--transition);
+}
+.navbar.scrolled {
+  padding: 8px 0;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+}
+
+.navbar-brand img {
+  height: 55px;
+  transition: var(--transition);
+  filter: drop-shadow(0 0 10px rgba(201,168,76,0.4));
+}
+.navbar-brand img:hover {
+  filter: drop-shadow(0 0 20px rgba(201,168,76,0.8));
+  transform: scale(1.05);
+}
+
+.navbar-nav .nav-link {
+  color: var(--off-white) !important;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 16px !important;
+  margin: 0 3px;
+  border-radius: 6px;
+  position: relative;
+  transition: var(--transition);
+}
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px; left: 50%;
+  transform: translateX(-50%);
+  width: 0; height: 2px;
+  background: var(--gold);
+  transition: var(--transition);
+  border-radius: 2px;
+}
+.navbar-nav .nav-link:hover {
+  color: var(--gold) !important;
+}
+.navbar-nav .nav-link:hover::after { width: 60%; }
+
+.nav-cta {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark)) !important;
+  color: var(--navy) !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
+  padding: 8px 20px !important;
+  box-shadow: 0 4px 15px rgba(201,168,76,0.3);
+}
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(201,168,76,0.5) !important;
+  color: var(--navy) !important;
+}
+.nav-cta::after { display: none !important; }
+
+.navbar-toggler {
+  border-color: var(--gold) !important;
+  color: var(--gold) !important;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23C9A84C' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* ===========================
+   HERO SECTION
+=========================== */
+#hero {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 30% 50%, #122040 0%, #0A1628 60%, #050d1a 100%);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+.hero-bg-ornament {
+  position: absolute;
+  width: 800px; height: 800px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.05);
+  top: 50%; left: -200px;
+  transform: translateY(-50%);
+}
+.hero-bg-ornament::before {
+  content: '';
+  position: absolute;
+  inset: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.08);
+}
+.hero-bg-ornament::after {
+  content: '';
+  position: absolute;
+  inset: 100px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.12);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 20px 16px;
+  border-radius: 50px;
+  margin-bottom: 1.5rem;
+  animation: fadeInDown 0.8s ease forwards;
+  margin-top: 35px;
+}
+.hero-badge i { font-size: 0.8rem; }
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  max-width: 520px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+.hero-stat {
+  text-align: center;
+}
+.hero-stat .number {
+  font-family: 'Cairo', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--gold);
+  display: block;
+  line-height: 1;
+}
+.hero-stat .label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+  background-size: 200% auto;
+  color: var(--navy);
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 14px 32px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 20px rgba(201,168,76,0.35);
+}
+.btn-gold:hover {
+  background-position: right center;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(201,168,76,0.5);
+  color: var(--navy);
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: var(--gold);
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 14px 32px;
+  border-radius: 10px;
+  border: 2px solid var(--gold);
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-outline-gold:hover {
+  background: rgba(201,168,76,0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(201,168,76,0.2);
+  color: var(--gold);
+}
+
+.hero-logo-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-logo-glow {
+  position: absolute;
+  width: 450px; height: 450px;
+  background: radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+@keyframes pulse-glow {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+.hero-logo {
+  width: 380px;
+  max-width: 90%;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 0 40px rgba(201,168,76,0.5));
+  animation: float 5s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 30px; left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+.hero-scroll-indicator i { color: var(--gold); font-size: 1.2rem; }
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+/* ===========================
+   SECTION STYLES
+=========================== */
+section { position: relative; z-index: 1; }
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+.section-desc {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ===========================
+   ABOUT SECTION
+=========================== */
+#about {
+  padding: 100px 0;
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-mid) 100%);
+}
+
+.about-card {
+  background: var(--navy-card);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  height: 100%;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.about-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 3px; height: 0;
+  background: var(--gold);
+  transition: var(--transition);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+.about-card:hover { 
+  border-color: rgba(201,168,76,0.4);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-gold);
+}
+.about-card:hover::before { height: 100%; }
+
+.about-icon {
+  width: 64px; height: 64px;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+  transition: var(--transition);
+}
+.about-card:hover .about-icon {
+  background: rgba(201,168,76,0.2);
+  transform: rotate(5deg) scale(1.1);
+}
+
+/* ===========================
+   FEATURES / WHY US
+=========================== */
+#features {
+  padding: 100px 0;
+  background: var(--navy);
+}
+
+.feature-item {
+  display: flex;
+  gap: 1.2rem;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+.feature-item:hover {
+  background: rgba(201,168,76,0.05);
+  border-color: rgba(201,168,76,0.15);
+}
+.feature-icon {
+  width: 52px; height: 52px;
+  min-width: 52px;
+  background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05));
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  color: var(--gold);
+  transition: var(--transition);
+}
+.feature-item:hover .feature-icon {
+  background: rgba(201,168,76,0.2);
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(201,168,76,0.2);
+}
+.feature-text h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.feature-text p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.features-visual {
+  position: relative;
+}
+.features-img-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(201,168,76,0.2);
+  box-shadow: var(--shadow-deep);
+  position: relative;
+}
+.features-img-wrap img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.features-img-wrap:hover img { transform: scale(1.05); }
+.features-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,22,40,0.8) 0%, transparent 50%);
+}
+.features-badge {
+  position: absolute;
+  bottom: 20px; right: 20px;
+  background: var(--gold);
+  color: var(--navy);
+  font-family: 'Cairo', sans-serif;
+  font-weight: 800;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+/* ===========================
+   PRODUCTS / CATEGORIES
+=========================== */
+#products {
+  padding: 100px 0;
+  background: var(--navy-mid);
+}
+
+.product-card {
+  background: var(--navy-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(201,168,76,0.1);
+  transition: var(--transition);
+  cursor: pointer;
+  height: 100%;
+}
+.product-card:hover {
+  border-color: rgba(201,168,76,0.4);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 30px rgba(201,168,76,0.15);
+}
+.product-img-wrap {
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 4/3;
+}
+.product-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.product-card:hover .product-img-wrap img { transform: scale(1.08); }
+.product-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10,22,40,0.7);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+}
+.product-card:hover .product-overlay { opacity: 1; }
+.product-overlay-btn {
+  background: var(--gold);
+  color: var(--navy);
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transform: translateY(20px);
+  transition: var(--transition);
+  text-decoration: none;
+}
+.product-card:hover .product-overlay-btn { transform: translateY(0); }
+.product-body {
+  padding: 1.2rem 1.5rem 1.5rem;
+}
+.product-tag {
+  font-size: 0.78rem;
+  color: var(--gold);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 4px;
+}
+.product-body h5 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.product-body p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ===========================
+   GALLERY / WORKS
+=========================== */
+#gallery {
+  padding: 100px 0;
+  background: var(--navy);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+  border: 1px solid rgba(201,168,76,0.1);
+  transition: var(--transition);
+}
+.gallery-item:hover {
+  border-color: rgba(201,168,76,0.4);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+.gallery-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.gallery-item:hover img { transform: scale(1.1); }
+.gallery-item-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,22,40,0.9) 0%, rgba(10,22,40,0.3) 50%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.2rem;
+  opacity: 0;
+  transition: var(--transition);
+}
+.gallery-item:hover .gallery-item-overlay { opacity: 1; }
+.gallery-item-overlay h6 {
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.gallery-item-overlay span {
+  font-size: 0.8rem;
+  color: var(--gold);
+}
+.gallery-zoom-btn {
+  position: absolute;
+  top: 12px; left: 12px;
+  width: 38px; height: 38px;
+  background: rgba(201,168,76,0.9);
+  color: var(--navy);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem;
+  transform: scale(0) rotate(-90deg);
+  transition: var(--transition);
+}
+.gallery-item:hover .gallery-zoom-btn { transform: scale(1) rotate(0deg); }
+
+/* Lightbox */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(5,13,26,0.97);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.lightbox-modal.active { display: flex; }
+.lightbox-img-wrap {
+  position: relative;
+  max-width: 90vw;
+  max-height: 85vh;
+}
+.lightbox-img-wrap img {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--radius);
+  border: 1px solid rgba(201,168,76,0.3);
+  box-shadow: 0 0 60px rgba(201,168,76,0.2);
+}
+.lightbox-close {
+  position: absolute;
+  top: -50px; left: 0;
+  width: 40px; height: 40px;
+  background: rgba(201,168,76,0.2);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+.lightbox-close:hover { background: var(--gold); color: var(--navy); }
+.lightbox-nav {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px;
+  background: rgba(201,168,76,0.2);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+.lightbox-nav:hover { background: var(--gold); color: var(--navy); }
+.lightbox-prev { right: calc(100% + 16px); }
+.lightbox-next { left: calc(100% + 16px); }
+
+/* ===========================
+   TESTIMONIALS
+=========================== */
+#testimonials {
+  padding: 100px 0;
+  background: var(--navy-mid);
+  overflow: hidden;
+}
+
+.testimonial-card {
+  background: var(--navy-card);
+  border: 1px solid rgba(201,168,76,0.12);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  height: 100%;
+  transition: var(--transition);
+  position: relative;
+}
+.testimonial-card::before {
+  content: '\201D';
+  position: absolute;
+  top: -10px; right: 24px;
+  font-size: 5rem;
+  color: rgba(201,168,76,0.12);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+.testimonial-card:hover {
+  border-color: rgba(201,168,76,0.3);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-5px);
+}
+.testimonial-stars { color: var(--gold); font-size: 1rem; margin-bottom: 0.8rem; }
+.testimonial-text { 
+  color: #c8d0dc; 
+  font-size: 0.95rem; 
+  line-height: 1.8; 
+  margin-bottom: 1.5rem; 
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.testimonial-avatar {
+  width: 48px; height: 48px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--navy);
+}
+.testimonial-author h6 { font-size: 0.95rem; font-weight: 700; margin: 0; }
+.testimonial-author span { font-size: 0.8rem; color: var(--gold); }
+
+/* ===========================
+   PROCESS / HOW WE WORK
+=========================== */
+#process {
+  padding: 100px 0;
+  background: var(--navy);
+}
+
+.process-step {
+  position: relative;
+  text-align: center;
+  padding: 0 1rem;
+}
+.process-step-num {
+  width: 72px; height: 72px;
+  background: rgba(201,168,76,0.1);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cairo', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--gold);
+  margin: 0 auto 1.2rem;
+  transition: var(--transition);
+  position: relative;
+  z-index: 1;
+}
+.process-step:hover .process-step-num {
+  background: var(--gold);
+  color: var(--navy);
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(201,168,76,0.4);
+}
+.process-step-line {
+  position: absolute;
+  top: 36px; right: -50%;
+  width: 100%; height: 2px;
+  background: linear-gradient(90deg, var(--gold) 0%, rgba(201,168,76,0.2) 100%);
+  z-index: 0;
+}
+.process-step:last-child .process-step-line { display: none; }
+.process-step h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.process-step p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.process-icon {
+  font-size: 1.4rem;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+}
+
+/* ===========================
+   NUMBERS / STATS
+=========================== */
+#stats {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+  border-top: 1px solid rgba(201,168,76,0.1);
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+}
+
+.stat-card {
+  text-align: center;
+  padding: 2rem 1rem;
+  position: relative;
+}
+.stat-card::after {
+  content: '';
+  position: absolute;
+  top: 20%; left: 0;
+  width: 1px; height: 60%;
+  background: rgba(201,168,76,0.2);
+}
+.stat-card:first-child::after { display: none; }
+.stat-number {
+  font-family: 'Cairo', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  color: var(--gold);
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.stat-label {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.stat-icon {
+  font-size: 1.5rem;
+  color: rgba(201,168,76,0.3);
+  margin-bottom: 0.5rem;
+}
+
+/* ===========================
+   DELIVERY / SHIPPING
+=========================== */
+#delivery {
+  padding: 100px 0;
+  background: var(--navy-mid);
+}
+
+.delivery-card {
+  background: var(--navy-card);
+  border: 1px solid rgba(201,168,76,0.12);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  text-align: center;
+  transition: var(--transition);
+  height: 100%;
+}
+.delivery-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-gold);
+}
+.delivery-icon {
+  width: 70px; height: 70px;
+  background: linear-gradient(135deg, rgba(201,168,76,0.2), rgba(201,168,76,0.05));
+  border-radius: 20px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem;
+  color: var(--gold);
+  margin: 0 auto 1.2rem;
+  transition: var(--transition);
+}
+.delivery-card:hover .delivery-icon {
+  background: rgba(201,168,76,0.25);
+  transform: scale(1.1) rotate(5deg);
+}
+.delivery-card h5 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.6rem; }
+.delivery-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+/* ===========================
+   SLIDER (HERO WORKS)
+=========================== */
+#showcase {
+  padding: 100px 0;
+  background: var(--navy);
+  overflow: hidden;
+}
+
+.swiper-showcase .swiper-slide {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(201,168,76,0.15);
+}
+.swiper-showcase .swiper-slide img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+.swiper-pagination-bullet { background: var(--gold) !important; }
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--gold) !important;
+  background: rgba(10,22,40,0.8);
+  width: 44px !important; height: 44px !important;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.3);
+}
+.swiper-button-next::after,
+.swiper-button-prev::after { font-size: 1rem !important; }
+
+/* ===========================
+   MATERIALS
+=========================== */
+#materials {
+  padding: 100px 0;
+  background: var(--navy-mid);
+}
+
+.material-card {
+  background: var(--navy-card);
+  border: 1px solid rgba(201,168,76,0.1);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  text-align: center;
+  transition: var(--transition);
+  cursor: default;
+  height: 100%;
+}
+.material-card:hover {
+  border-color: rgba(201,168,76,0.35);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-5px);
+}
+.material-card img {
+  width: 100%; aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  transition: transform 0.5s ease;
+}
+.material-card:hover img { transform: scale(1.03); }
+.material-card h5 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+.material-card p { font-size: 0.82rem; color: var(--text-muted); margin: 0; }
+
+/* ===========================
+   FAQ
+=========================== */
+#faq {
+  padding: 100px 0;
+  background: var(--navy);
+}
+
+.accordion-item {
+  background: var(--navy-card) !important;
+  border: 1px solid rgba(201,168,76,0.1) !important;
+  border-radius: var(--radius) !important;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+.accordion-item:hover { border-color: rgba(201,168,76,0.3) !important; }
+.accordion-button {
+  background: transparent !important;
+  color: var(--white) !important;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  font-size: 0.98rem;
+  padding: 1.2rem 1.5rem;
+  border-radius: var(--radius) !important;
+  box-shadow: none !important;
+}
+.accordion-button:not(.collapsed) { color: var(--gold) !important; }
+.accordion-button::after {
+  filter: invert(1) sepia(1) saturate(3) hue-rotate(0deg);
+}
+.accordion-body {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  padding: 0 1.5rem 1.2rem;
+  border-top: 1px solid rgba(201,168,76,0.1);
+}
+
+/* ===========================
+   LOCATION / MAP
+=========================== */
+#location {
+  padding: 100px 0;
+  background: var(--navy-mid);
+}
+
+.map-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(201,168,76,0.2);
+  box-shadow: var(--shadow-deep);
+  position: relative;
+}
+.map-wrap iframe {
+  width: 100%;
+  height: 420px;
+  display: block;
+  filter: brightness(0.85) saturate(0.7) hue-rotate(180deg);
+}
+
+.contact-info-card {
+  background: var(--navy-card);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  height: 100%;
+}
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(201,168,76,0.08);
+  transition: var(--transition);
+}
+.contact-row:last-child { border-bottom: none; }
+.contact-row:hover .contact-row-icon { transform: scale(1.1); color: var(--gold-light); }
+.contact-row-icon {
+  width: 44px; height: 44px;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold);
+  font-size: 1rem;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+.contact-row-text small {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+.contact-row-text a, 
+.contact-row-text span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.contact-row-text a:hover { color: var(--gold); }
+
+/* ===========================
+   CTA BANNER
+=========================== */
+#cta-banner {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+  border-top: 1px solid rgba(201,168,76,0.15);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  position: relative;
+  overflow: hidden;
+}
+#cta-banner::before {
+  content: '';
+  position: absolute;
+  top: -100px; left: 50%;
+  transform: translateX(-50%);
+  width: 600px; height: 400px;
+  background: radial-gradient(ellipse, rgba(201,168,76,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+.cta-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+.whatsapp-btn {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: var(--white) !important;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 14px 36px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: 0 6px 20px rgba(37,211,102,0.3);
+}
+.whatsapp-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(37,211,102,0.4);
+  color: var(--white) !important;
+}
+.float-phone {
+  position: fixed;
+  bottom: 110px;
+  left: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #c9a84c, #c9a84c);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.8rem;
+  box-shadow: 0 6px 18px rgba(5,117,230,0.5);
+  transition: 0.3s;
+  z-index: 9998;
+  animation: floatPhone 4s ease-in-out infinite;
+}
+.float-phone:hover {
+  transform: scale(1.1);
+}
+@keyframes floatPhone {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(-5deg); }
+  50% { transform: translateY(0) rotate(5deg); }
+  75% { transform: translateY(10px) rotate(-5deg); }
+}
+
+/* ===========================
+   SOCIAL STRIP
+=========================== */
+#social {
+  padding: 60px 0;
+  background: var(--navy);
+}
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: var(--transition);
+  border: 1px solid rgba(201,168,76,0.2);
+  color: var(--text-muted);
+  background: var(--navy-card);
+}
+.social-link:hover {
+  transform: translateY(-4px) rotate(-5deg);
+  border-color: var(--gold);
+  color: var(--gold);
+  box-shadow: 0 8px 25px rgba(201,168,76,0.2);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+  background: #050d1a;
+  border-top: 1px solid rgba(201,168,76,0.15);
+  padding: 60px 0 30px;
+}
+.footer-logo { 
+  height: 70px; 
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 10px rgba(201,168,76,0.3));
+}
+.footer-desc { 
+  font-size: 0.88rem; 
+  color: var(--text-muted); 
+  line-height: 1.7; 
+  max-width: 280px;
+}
+.footer-title { 
+  color: var(--gold); 
+  font-family: 'Cairo', sans-serif;
+  font-size: 1rem; 
+  font-weight: 700; 
+  margin-bottom: 1.2rem;
+  position: relative;
+  padding-bottom: 10px;
+}
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 30px; height: 2px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+.footer-links { list-style: none; padding: 0; margin: 0; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+.footer-links a i { color: var(--gold); font-size: 0.75rem; }
+.footer-links a:hover { color: var(--gold); padding-right: 6px; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding-top: 20px;
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* ===========================
+   FLOATING WHATSAPP
+=========================== */
+.float-wa {
+  position: fixed;
+  bottom: 30px; left: 30px;
+  width: 58px; height: 58px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white !important;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+  text-decoration: none;
+  z-index: 999;
+  box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+  transition: var(--transition);
+  animation: wa-bounce 2s ease-in-out infinite 3s;
+}
+.float-wa:hover {
+  transform: scale(1.15);
+  color: white !important;
+  box-shadow: 0 10px 35px rgba(37,211,102,0.6);
+}
+@keyframes wa-bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+.float-wa-pulse {
+  position: absolute;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background: rgba(37,211,102,0.3);
+  animation: pulse-ring 2s ease-out infinite;
+}
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* ===========================
+   SCROLL TO TOP
+=========================== */
+.scroll-top {
+  position: fixed;
+  bottom: 30px; right: 30px;
+  width: 46px; height: 46px;
+  background: rgba(201,168,76,0.15);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  transition: var(--transition);
+  opacity: 0;
+  transform: translateY(20px);
+}
+.scroll-top.visible { opacity: 1; transform: translateY(0); }
+.scroll-top:hover { background: var(--gold); color: var(--navy); }
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 991px) {
+  .hero-logo { width: 260px; }
+  .hero-logo-glow { width: 300px; height: 300px; }
+  .hero-title { font-size: 2.2rem; }
+  .process-step-line { display: none; }
+  .stat-card::after { display: none; }
+  .navbar-collapse { 
+    background: rgba(10,22,40,0.98); 
+    padding: 1rem;
+    border-radius: 12px;
+    margin-top: 10px;
+    border: 1px solid rgba(201,168,76,0.15);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-stats { gap: 1.5rem; }
+  .hero-stat .number { font-size: 1.6rem; }
+  .hero-btns { flex-direction: column; }
+  .hero-btns .btn-gold, .hero-btns .btn-outline-gold { width: 100%; justify-content: center; }
+  .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+  .lightbox-nav { display: none; }
+  section { padding: 70px 0 !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- Particles Canvas -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- ==================
+     NAVBAR
+================== -->
+<nav class="navbar navbar-expand-lg" id="mainNavbar">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="Css/logo.png" alt="المخمل الملكي" loading="lazy">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav me-auto gap-1">
+        <li class="nav-item"><a class="nav-link" href="#about">من نحن</a></li>
+        <li class="nav-item"><a class="nav-link" href="#products">منتجاتنا</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">أعمالنا</a></li>
+        <li class="nav-item"><a class="nav-link" href="#materials">خاماتنا</a></li>
+        <li class="nav-item"><a class="nav-link" href="#delivery">الشحن</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonials">آراء العملاء</a></li>
+        <li class="nav-item"><a class="nav-link" href="#location">موقعنا</a></li>
+      </ul>
+      <a href="https://wa.me/966546625515" target="_blank" class="btn-gold nav-cta">
+        <i class="fab fa-whatsapp"></i> تواصل معنا
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================
+     HERO
+================== -->
+<section id="hero">
+  <div class="hero-bg-ornament"></div>
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right" data-aos-duration="900">
+        <div class="hero-badge">
+          <i class="fas fa-crown"></i>
+          الأول في الرياض للأثاث المخملي الفاخر
+        </div>
+        <h1 class="hero-title">
+          <span class="gold-shimmer">فخامة ترى</span><br>
+          وراحة <span style="color: var(--gold)">تحس</span>
+        </h1>
+        <p class="hero-subtitle">
+          نصنع مجالسك الملكية بأرقى المخمل وأفخم الخامات، 
+          لأن بيتك يستحق أن يعكس شخصيتك وذوقك الرفيع
+        </p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="number" data-count="500">0</span>
+            <span class="label">عميل سعيد</span>
+          </div>
+          <div class="hero-stat">
+            <span class="number" data-count="22">0</span>
+            <span class="label">مشروع منفذ</span>
+          </div>
+          <div class="hero-stat">
+            <span class="number" data-count="5">0</span>
+            <span class="label">سنوات خبرة</span>
+          </div>
+          <div class="hero-stat">
+            <span class="number" data-count="13">0</span>
+            <span class="label">مدينة نشحن لها</span>
+          </div>
+        </div>
+        <div class="hero-btns">
+          <a href="#gallery" class="btn-gold">
+            <i class="fas fa-images"></i> شاهد أعمالنا
+          </a>
+          <a href="https://wa.me/966546625515" target="_blank" class="btn-outline-gold">
+            <i class="fab fa-whatsapp"></i> اطلب الآن
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left" data-aos-duration="900">
+        <div class="hero-logo-wrap">
+          <div class="hero-logo-glow"></div>
+          <img src="Css/logo.png" alt="شعار المخمل الملكي" class="hero-logo">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll-indicator">
+    <span>اكتشف</span>
+    <i class="fas fa-chevron-down"></i>
+  </div>
+</section>
+
+<!-- ==================
+     ABOUT
+================== -->
+<section id="about">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-eyebrow">
+        <i class="fas fa-gem"></i> من نحن
+      </div>
+      <h2 class="section-title">المخمل الملكي.. <span class="gold-shimmer">تحفة في كل قطعة</span></h2>
+      <div class="gold-line"></div>
+      <p class="section-desc">
+        نحن متخصصون في صناعة وتنفيذ الأثاث المخملي الفاخر للمجالس والصالونات والغرف، 
+        بأيدي حرفيين محترفين وخامات عالمية تدوم لسنوات
+      </p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+        <div class="about-card">
+          <div class="about-icon"><i class="fas fa-medal"></i></div>
+          <h5 class="mb-2" style="font-family:'Cairo';font-weight:700">جودة لا تُضاهى</h5>
+          <p style="color:var(--text-muted);font-size:.88rem;line-height:1.7">نستخدم أجود أنواع المخمل الإيطالي والتركي المستورد لضمان متانة وجمال استثنائيين</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="about-card">
+          <div class="about-icon"><i class="fas fa-drafting-compass"></i></div>
+          <h5 class="mb-2" style="font-family:'Cairo';font-weight:700">تصاميم حصرية</h5>
+          <p style="color:var(--text-muted);font-size:.88rem;line-height:1.7">كل قطعة تُصمم خصيصاً لك وفق ذوقك وأبعاد مكانك لتنسجم مع ديكورك بشكل مثالي</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="about-card">
+          <div class="about-icon"><i class="fas fa-truck-fast"></i></div>
+          <h5 class="mb-2" style="font-family:'Cairo';font-weight:700">توصيل سريع</h5>
+          <p style="color:var(--text-muted);font-size:.88rem;line-height:1.7">نصل إلى باب بيتك في الرياض وجميع مناطق المملكة بأمان تام وفي الموعد المحدد</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="about-card">
+          <div class="about-icon"><i class="fas fa-headset"></i></div>
+          <h5 class="mb-2" style="font-family:'Cairo';font-weight:700">خدمة مميزة</h5>
+          <p style="color:var(--text-muted);font-size:.88rem;line-height:1.7">فريق خدمة عملاء متاح لمساعدتك من لحظة الاستفسار حتى ما بعد الاستلام بإذن الله</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================
+     STATS
+================== -->
+<section id="stats">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="0">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-users"></i></div>
+          <span class="stat-number" data-count="500">0</span>
+          <span class="stat-label">عميل راضٍ</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-couch"></i></div>
+          <span class="stat-number" data-count="22">0</span>
+          <span class="stat-label">مشروع منفذ</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <span class="stat-number" data-count="13">0</span>
+          <span class="stat-label">مدينة نخدمها</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-star"></i></div>
+          <span class="stat-number" data-count="5">0</span>
+          <span class="stat-label">سنوات خبرة</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================
+     FEATURES
+================== -->
+<section id="features">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="section-eyebrow mb-2">
+          <i class="fas fa-star"></i> لماذا نحن؟
+        </div>
+        <h2 class="section-title mb-3">نختلف عن غيرنا في <span class="gold-shimmer">كل التفاصيل</span></h2>
+        <div class="gold-line" style="margin:0 0 1.5rem;"></div>
+        <p style="color:var(--text-muted);margin-bottom:2rem;line-height:1.8">
+          نجمع بين الحرفية الأصيلة والتصميم العصري لنقدم لك قطعة أثاث تبهر ضيوفك وتمنحك راحة استثنائية كل يوم
+        </p>
+        <div class="d-flex flex-column gap-2">
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fas fa-gem"></i></div>
+            <div class="feature-text">
+              <h5>خامات مستوردة بشهادات جودة</h5>
+              <p>مخمل إيطالي وتركي معتمد، لا نتنازل عن الجودة أبداً مهما كانت التكلفة</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fas fa-ruler-combined"></i></div>
+            <div class="feature-text">
+              <h5>قياسات وتصاميم حسب الطلب</h5>
+              <p>نصمم لك قطعتك بالمقاس الذي تريد والشكل الذي يناسب مساحتك بالضبط</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fas fa-palette"></i></div>
+            <div class="feature-text">
+              <h5>تشكيلة ألوان لا تنتهي</h5>
+              <p>أكثر من 50 لون مخمل متاح حتى تختار ما يتناسب مع بالوان غرفتك وذوقك</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+            <div class="feature-text">
+              <h5>ضمان الجودة بعد التسليم</h5>
+              <p>نضمن لك جودة الصنعة ونكون دايماً معك في حال احتجت أي خدمة بعد الاستلام</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="features-visual">
+          <div class="features-img-wrap">
+            <img src="Css/1.jpeg" alt="أعمال المخمل الملكي الفاخرة" loading="lazy">
+            <div class="features-img-overlay"></div>
+            <div class="features-badge">
+              <i class="fas fa-crown me-1"></i> جودة ملكية
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================
+     PRODUCTS
+================== -->
+<section id="products">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-eyebrow">
+        <i class="fas fa-couch"></i> منتجاتنا
+      </div>
+      <h2 class="section-title">تشكيلتنا <span class="gold-shimmer">الملكية</span></h2>
+      <div class="gold-line"></div>
+      <p class="section-desc">كل قطعة في مجموعتنا تحكي قصة فخامة وتجسّد معنى الراحة الحقيقية</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="Css/2.jpeg" alt="كنب ملكي مخمل" loading="lazy">
+            <div class="product-overlay">
+              <a href="https://wa.me/966546625515" target="_blank" class="product-overlay-btn">استفسر الآن</a>
+            </div>
+          </div>
+          <div class="product-body">
+            <span class="product-tag">الأكثر طلباً</span>
+            <h5>كنب ملكي كلاسيك</h5>
+            <p>تصميم ملكي أصيل بنقشات كلاسيكية وأرجل خشب ذهبية</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="Css/3.jpeg" alt="صالون مخمل فاخر" loading="lazy">
+            <div class="product-overlay">
+              <a href="https://wa.me/966546625515" target="_blank" class="product-overlay-btn">استفسر الآن</a>
+            </div>
+          </div>
+          <div class="product-body">
+            <span class="product-tag">صالونات</span>
+            <h5>صالون مخمل عصري</h5>
+            <p>تصميم معاصر يجمع بين الأناقة الغربية والتراث العربي الأصيل</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="Css/4.jpeg" alt="كرسي ذراع مخمل" loading="lazy">
+            <div class="product-overlay">
+              <a href="https://wa.me/966546625515" target="_blank" class="product-overlay-btn">استفسر الآن</a>
+            </div>
+          </div>
+          <div class="product-body">
+            <span class="product-tag">كراسي فردية</span>
+            <h5>كرسي ذراع فاخر</h5>
+            <p>قطعة مستقلة تُضيف لمسة ملكية في أي ركن من أركان منزلك</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="Css/5.jpeg" alt="مجلس مخمل سعودي" loading="lazy">
+            <div class="product-overlay">
+              <a href="https://wa.me/966546625515" target="_blank" class="product-overlay-btn">استفسر الآن</a>
+            </div>
+          </div>
+          <div class="product-body">
+            <span class="product-tag">مجالس</span>
+            <h5>مجلس سعودي فاخر</h5>
+            <p>مجلس أرضي تقليدي بإسفنج ذو جودة عالية ومخمل ناعم فائق</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="Css/6.jpeg" alt="أريكة مخمل" loading="lazy">
+            <div class="product-overlay">
+              <a href="https://wa.me/966546625515" target="_blank" class="product-overlay-btn">استفسر الآن</a>
+            </div>
+          </div>
+          <div class="product-body">
+            <span class="product-tag">أرائك</span>
+            <h5>أريكة مخمل بريمييم</h5>
+            <p>أريكة بتصميم عالمي وخامات استثنائية تناسب الفلل والقصور</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="Css/7.jpeg" alt="سرير نوم" loading="lazy">
+            <div class="product-overlay">
+              <a href="https://wa.me/966546625515" target="_blank" class="product-overlay-btn">استفسر الآن</a>
+            </div>
+          </div>
+          <div class="product-body">
+            <span class="product-tag">سرير نوم </span>
+            <h5>    سرير نوم كلاسيك</h5>
+            <p>   سرير نوم كلاسيك بإطار خشبي عالي الجودة    </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5" data-aos="fade-up">
+      <a href="https://wa.me/966546625515" target="_blank" class="btn-gold">
+        <i class="fas fa-th-large"></i> شاهد كامل المجموعة
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================
+     GALLERY / WORKS
+================== -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-eyebrow">
+        <i class="fas fa-images"></i> أعمالنا
+      </div>
+      <h2 class="section-title">من <span class="gold-shimmer">إبداعاتنا</span> الحقيقية</h2>
+      <div class="gold-line"></div>
+      <p class="section-desc">كل صورة تحكي قصة عميل سعيد ومنزل تحوّل إلى قصر بفضل المخمل الملكي</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+    </div>
+    <div class="text-center mt-5" data-aos="fade-up">
+      <a href="https://wa.me/966546625515" target="_blank" class="btn-gold">
+        <i class="fab fa-whatsapp"></i> طلب تصميم مخصص
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox-modal" id="lightbox">
+  <div class="lightbox-img-wrap">
+    <div class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></div>
+    <img src="" alt="" id="lightboxImg">
+    <button class="lightbox-nav lightbox-prev" id="lbPrev"><i class="fas fa-chevron-right"></i></button>
+    <button class="lightbox-nav lightbox-next" id="lbNext"><i class="fas fa-chevron-left"></i></button>
+  </div>
+</div>
+
+<!-- ==================
+     SHOWCASE SWIPER
+================== -->
+<section id="showcase">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-eyebrow">
+        <i class="fas fa-play-circle"></i> لمحة من أعمالنا
+      </div>
+      <h2 class="section-title">جولة في عالم <span class="gold-shimmer">الفخامة</span></h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="swiper swiper-showcase" data-aos="fade-up">
+      <div class="swiper-wrapper" id="showcaseWrapper"></div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================
+     MATERIALS
+================== -->
+<section id="materials">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-eyebrow">
+        <i class="fas fa-layer-group"></i> خاماتنا
+      </div>
+      <h2 class="section-title">نختار <span class="gold-shimmer">الأفضل</span> فقط</h2>
+      <div class="gold-line"></div>
+      <p class="section-desc">خاماتنا مستوردة ومعتمدة لضمان متانة وجمال يدوم لسنوات طويلة</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="0">
+        <div class="material-card">
+          <img src="Css/8.jpeg" alt="مخمل إيطالي" loading="lazy">
+          <h5>مخمل إيطالي</h5>
+          <p>ناعم، لامع، ثابت اللون</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
+        <div class="material-card">
+          <img src="Css/9.jpeg" alt="مخمل تركي" loading="lazy">
+          <h5>مخمل تركي</h5>
+          <p>متين، ناعم الملمس، مقاوم للبهتان</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200">
+        <div class="material-card">
+          <img src="Css/10.jpeg" alt="إسفنج عالي الكثافة" loading="lazy">
+          <h5>إسفنج بريميوم</h5>
+          <p>عالي الكثافة، يتحمل الاستخدام اليومي</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
+        <div class="material-card">
+          <img src="Css/11.jpeg" alt="هيكل خشب زان" loading="lazy">
+          <h5>خشب زان طبيعي</h5>
+          <p>هيكل قوي لعمر أطول وأجمل</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================
+     PROCESS
+================== -->
+<section id="process">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-eyebrow">
+        <i class="fas fa-route"></i> كيف نعمل؟
+      </div>
+      <h2 class="section-title">خطواتك نحو <span class="gold-shimmer">الفخامة</span></h2>
+      <div class="gold-line"></div>
+      <p class="section-desc">عملية بسيطة ومريحة من أول تواصل حتى تستلم قطعتك الملكية في بيتك</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="0">
+        <div class="process-step">
+          <div class="process-step-num">١</div>
+          <div class="process-step-line"></div>
+          <div class="process-icon"><i class="fab fa-whatsapp" style="color:#25D366"></i></div>
+          <h5>تواصل معنا</h5>
+          <p>أرسل لنا على واتساب واحكيلنا اللي في بالك</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="process-step">
+          <div class="process-step-num">٢</div>
+          <div class="process-step-line"></div>
+          <div class="process-icon"><i class="fas fa-palette"></i></div>
+          <h5>اختر التصميم</h5>
+          <p>نعرض عليك خيارات الألوان والأشكال حتى ترتاح</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="process-step">
+          <div class="process-step-num">٣</div>
+          <div class="process-step-line"></div>
+          <div class="process-icon"><i class="fas fa-hammer"></i></div>
+          <h5>التنفيذ والتصنيع</h5>
+          <p>نصنع قطعتك بأيدي حرفيين محترفين بأعلى جودة</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="process-step">
+          <div class="process-step-num">٤</div>
+          <div class="process-icon"><i class="fas fa-home"></i></div>
+          <h5>التوصيل لبابك</h5>
+          <p>نوصل قطعتك بأمان تام لأي مكان في المملكة</p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5" data-aos="fade-up">
+      <a href="https://wa.me/966546625515" target="_blank" class="btn-gold">
+        <i class="fas fa-paper-plane"></i> ابدأ رحلتك الملكية الآن
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================
+     DELIVERY
+================== -->
+<section id="delivery">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-eyebrow">
+        <i class="fas fa-truck-fast"></i> الشحن والتوصيل
+      </div>
+      <h2 class="section-title">نوصلك أينما <span class="gold-shimmer">كنت</span></h2>
+      <div class="gold-line"></div>
+      <p class="section-desc">ما تقلق من بعد المسافة، قطعتك الملكية تصلك بأمان لأي مكان في السعودية الحبيبة</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+        <div class="delivery-card">
+          <div class="delivery-icon"><i class="fas fa-city"></i></div>
+          <h5>الرياض</h5>
+          <p>توصيل سريع داخل الرياض مع ضمان الأمان الكامل وتثبيت مجاني</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="delivery-card">
+          <div class="delivery-icon"><i class="fas fa-map"></i></div>
+          <h5>كامل المنطقة الوسطى</h5>
+          <p>نخدم جميع مدن المنطقة الوسطى والمحافظات المجاورة للرياض</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="delivery-card">
+          <div class="delivery-icon"><i class="fas fa-globe-asia"></i></div>
+          <h5>شمال وجنوب المملكة</h5>
+          <p>شحن آمن لجدة ومكة والمدينة والطائف وعسير وجازان وكل المناطق</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="delivery-card">
+          <div class="delivery-icon"><i class="fas fa-truck"></i></div>
+          <h5>شحن مؤمّن بالكامل</h5>
+          <p>كل طرد يُغلّف بعناية ومؤمّن ضد أي تلف أثناء النقل لأقصى الأمان</p>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5 justify-content-center">
+      <div class="col-lg-8">
+        <div style="background:var(--navy-card);border:1px solid rgba(201,168,76,0.2);border-radius:var(--radius-lg);padding:2rem;text-align:center;" data-aos="fade-up">
+          <i class="fas fa-info-circle mb-3 d-block" style="font-size:2rem;color:var(--gold);"></i>
+          <h5 style="font-family:'Cairo';font-weight:700;margin-bottom:0.7rem;">شحن خارج الرياض مافيه مشكلة!</h5>
+          <p style="color:var(--text-muted);margin:0;line-height:1.8;">بنبعتلك طلبك على طول لأي مكان في السعودية، بس التكلفة تتغير حسب المسافة. تواصل معنا على واتساب وأكيد نوصل أفضل سعر شحن</p>
+          <a href="https://wa.me/966546625515" target="_blank" class="btn-gold mt-3" style="display:inline-flex;">
+            <i class="fab fa-whatsapp"></i> اسأل عن الشحن
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================
+     TESTIMONIALS
+================== -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-eyebrow">
+        <i class="fas fa-star"></i> آراء عملاؤنا
+      </div>
+      <h2 class="section-title">ما يقوله <span class="gold-shimmer">عملاؤنا</span></h2>
+      <div class="gold-line"></div>
+      <p class="section-desc">رأي عملاؤنا هو أكبر شهادة على تميزنا والدليل الحقيقي على جودتنا</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">والله اشتريت كنب من المخمل الملكي وما توقعت الجودة تكون بالمستوى ذا! الخامة محترمة وبيتنا اتغير كلياً</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">ع</div>
+            <div>
+              <h6>عبدالرحمن الشمري</h6>
+              <span>الرياض</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">الخدمة ممتازة من أول تواصل لحين التسليم، الكنب وصل كأحسن ما يكون وتم التركيب بسرعة واحترافية تامة</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">م</div>
+            <div>
+              <h6>منيرة العتيبي</h6>
+              <span>الرياض</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">طلبت شحن لجدة وأنا خايف بس جاء الطلب سليم 100%، التغليف كان محترفاً جداً والمنتج فاق توقعاتي</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">خ</div>
+            <div>
+              <h6>خالد الغامدي</h6>
+              <span>جدة</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">كنب المجلس اللي طلبته صار محط اهتمام كل ضيوفنا، الكل يسأل عنه وين اشتريناه، شكراً المخمل الملكي</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">س</div>
+            <div>
+              <h6>سلمى القحطاني</h6>
+              <span>الدمام</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">أفضل قرار اتخذته لبيتي الجديد، الألوان عندهم كثيرة وساعدوني اخترت الأنسب لديكوري، ما قصروا أبداً</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">ف</div>
+            <div>
+              <h6>فيصل الحربي</h6>
+              <span>الرياض</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">ثاني مرة أطلب منهم وما خابت توقعاتي، الناس مسؤولين وجادين في شغلهم، أنصح كل واحد بيدور جودة</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">ن</div>
+            <div>
+              <h6>نورة الدوسري</h6>
+              <span>الخرج</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================
+     FAQ
+================== -->
+<section id="faq">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-eyebrow">
+        <i class="fas fa-question-circle"></i> الأسئلة الشائعة
+      </div>
+      <h2 class="section-title">كل أسئلتك لها <span class="gold-shimmer">إجابة</span></h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8" data-aos="fade-up">
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                هل تشحنون لجميع مناطق المملكة؟
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">أيوه بالتأكيد! نشحن لجميع مناطق ومحافظات المملكة العربية السعودية، من الرياض لجدة ومكة والمدينة وحائل وتبوك وعسير وغيرها. فقط تواصل معنا على واتساب وحدد موقعك وراح نعطيك تفاصيل الشحن والتوصيل.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                كم يستغرق وقت التصنيع والتوصيل؟
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">وقت التصنيع يعتمد على الطلب، لكن في الغالب من 7 إلى 14 يوم عمل للطلبات المخصصة، والتوصيل داخل الرياض من 1 إلى 3 أيام، وخارجها من 3 إلى 7 أيام عمل. راح نبقى على تواصل معاك طول الوقت.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                هل يمكنني اختيار لون وتصميم مخصص؟
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">طبعاً! ده أساس شغلنا. عندنا أكثر من 50 لون مخمل متاح، وكل قطعة تُصنع حسب مقاساتك وذوقك. فقط تواصل معنا وأخبرنا بتفاصيل اللي تريده وسنرسل لك عينات الألوان والتصاميم المتاحة.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                ما هي طريقة الدفع المتاحة؟
+              </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">نقبل الدفع عبر تحويل بنكي، مدى، فيزا، وكذلك الدفع عند الاستلام للطلبات داخل الرياض حسب الاتفاق. نبدأ التصنيع بعد تأكيد الطلب وسداد مقدم.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                هل هناك ضمان على المنتجات؟
+              </button>
+            </h2>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">نعم، نضمن جودة الصنعة والخامات ونلتزم بإصلاح أي عيب في التصنيع خلال فترة الضمان. تواصل معنا مباشرة في حال وجود أي ملاحظة بعد الاستلام وسنتعامل معها بكل مسؤولية.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                هل تنفذون مشاريع كبيرة مثل الفنادق والمجمعات؟
+              </button>
+            </h2>
+            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">بالتأكيد! نقبل المشاريع التجارية الكبيرة كالفنادق والمجمعات السكنية والمكاتب. لدينا طاقة إنتاجية عالية وخبرة في تنفيذ الطلبيات الكبيرة بنفس مستوى الجودة والاحترافية.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================
+     LOCATION
+================== -->
+<section id="location">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-eyebrow">
+        <i class="fas fa-map-marker-alt"></i> موقعنا
+      </div>
+      <h2 class="section-title">نحن في <span class="gold-shimmer">الرياض</span></h2>
+      <div class="gold-line"></div>
+      <p class="section-desc">تفضل زرنا أو تواصل معنا، أهلاً وسهلاً بك دايماً</p>
+    </div>
+    <div class="row g-4 align-items-stretch">
+      <div class="col-lg-7" data-aos="fade-right">
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3629.772919664865!2d46.705867775360325!3d24.52793877814778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDMxJzQwLjYiTiA0NsKwNDInMzAuNCJF!5e0!3m2!1sen!2seg!4v1781009045629!5m2!1sen!2seg" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="موقع المخمل الملكي"></iframe>
+        </div>
+      </div>
+      <div class="col-lg-5" data-aos="fade-left">
+        <div class="contact-info-card">
+          <h4 style="font-family:'Cairo';font-weight:800;margin-bottom:1.5rem;">بيانات التواصل</h4>
+          <div class="contact-row">
+            <div class="contact-row-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="contact-row-text">
+              <small>رقم الهاتف</small>
+              <a href="tel:+966546625515">0546625515</a>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-row-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="contact-row-text">
+              <small>واتساب</small>
+              <a href="https://wa.me/966546625515" target="_blank">0546625515</a>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-row-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-row-text">
+              <small>الموقع</small>
+              <span>الرياض، المملكة العربية السعودية</span>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-row-icon"><i class="fas fa-clock"></i></div>
+            <div class="contact-row-text">
+              <small>ساعات العمل</small>
+              <span>السبت - الخميس | 9ص - 10م</span>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-row-icon"><i class="fas fa-truck"></i></div>
+            <div class="contact-row-text">
+              <small>التوصيل</small>
+              <span>جميع مناطق المملكة</span>
+            </div>
+          </div>
+          <a href="https://wa.me/966546625515" target="_blank" class="btn-gold mt-3 w-100 justify-content-center">
+            <i class="fab fa-whatsapp"></i> ابدأ محادثة الآن
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================
+     CTA BANNER
+================== -->
+<section id="cta-banner">
+  <div class="container text-center">
+    <div data-aos="zoom-in">
+      <div class="section-eyebrow justify-content-center mb-3">
+        <i class="fas fa-crown"></i> مستعد تبدأ؟
+      </div>
+      <h2 class="cta-title">حوّل مجلسك إلى <span class="gold-shimmer">تحفة فنية</span> اليوم</h2>
+      <p class="cta-subtitle">لا تنتظر، تواصل معنا الآن واحصل على استشارة مجانية وعرض سعر خاص</p>
+      <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <a href="https://wa.me/966546625515" target="_blank" class="whatsapp-btn">
+          <i class="fab fa-whatsapp fa-lg"></i> تواصل عبر واتساب
+        </a>
+        <a href="tel:+966546625515" class="btn-outline-gold">
+          <i class="fas fa-phone-alt"></i> اتصل مباشرة
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================
+     FOOTER
+================== -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <img src="Css/logo.png" alt="المخمل الملكي" class="footer-logo">
+        <p class="footer-desc">فخامة ترى ووراحة تحس، نصنع لك قطعة أثاث تبقى معك سنوات وتعكس ذوقك الرفيع وشخصيتك المميزة.</p>
+        <div class="d-flex gap-2 mt-3">
+          <a href="https://wa.me/966546625515" target="_blank" class="social-link" style="color:#25D366;border-color:#25D366;width:40px;height:40px;font-size:1rem"><i class="fab fa-whatsapp"></i></a>
+         
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h6 class="footer-title">روابط سريعة</h6>
+        <ul class="footer-links">
+          <li><a href="#about"><i class="fas fa-chevron-left"></i>من نحن</a></li>
+          <li><a href="#products"><i class="fas fa-chevron-left"></i>منتجاتنا</a></li>
+          <li><a href="#gallery"><i class="fas fa-chevron-left"></i>أعمالنا</a></li>
+          <li><a href="#materials"><i class="fas fa-chevron-left"></i>خاماتنا</a></li>
+          <li><a href="#delivery"><i class="fas fa-chevron-left"></i>الشحن</a></li>
+          <li><a href="#faq"><i class="fas fa-chevron-left"></i>الأسئلة الشائعة</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6 class="footer-title">خدماتنا</h6>
+        <ul class="footer-links">
+          <li><a><i class="fas fa-chevron-left"></i>كنب مخمل</a></li>
+          <li><a><i class="fas fa-chevron-left"></i>مجالس سعودية</a></li>
+          <li><a><i class="fas fa-chevron-left"></i>صالونات فاخرة</a></li>
+          <li><a><i class="fas fa-chevron-left"></i>تصميم مخصص</a></li>
+          <li><a><i class="fas fa-chevron-left"></i>شحن لكل السعودية</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6 class="footer-title">تواصل معنا</h6>
+        <ul class="footer-links">
+          <li>
+            <a href="tel:+966546625515">
+              <i class="fas fa-phone-alt" style="color:var(--gold)"></i>
+              0546625515
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/966546625515" target="_blank">
+              <i class="fab fa-whatsapp" style="color:#25D366"></i>
+              واتساب مباشر
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-map-marker-alt" style="color:var(--gold)"></i>
+              الرياض، السعودية
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-clock" style="color:var(--gold)"></i>
+              السبت - الخميس | 9ص - 10م
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p style="margin:0">
+        © 2026 المخمل الملكي | جميع الحقوق محفوظة
+        <span class="gold-text mx-2">|</span>
+        الرياض، المملكة العربية السعودية
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/966546625515" target="_blank" class="float-wa" aria-label="تواصل عبر واتساب">
+  <div class="float-wa-pulse"></div>
+  <i class="fab fa-whatsapp"></i>
+</a>
+<!-- Floating Phone -->
+<a href="tel:+966546625515"  class="float-phone" aria-label="تواصل عبر الهاتف">
+  <div class="float-phone-pulse"></div>
+  <i class="fas fa-phone"></i>
+</a>
+<!-- Scroll to Top -->
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-chevron-up"></i>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+
+<script>
+// ===========================
+// PARTICLES SYSTEM
+// ===========================
+(function(){
+  const canvas = document.getElementById('particles-canvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  
+  function resize(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  
+  class Particle {
+    constructor(){
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.size = Math.random() * 2 + 0.5;
+      this.speedX = (Math.random() - 0.5) * 0.3;
+      this.speedY = (Math.random() - 0.5) * 0.3;
+      this.opacity = Math.random() * 0.5 + 0.1;
+    }
+    update(){
+      this.x += this.speedX;
+      this.y += this.speedY;
+      if(this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+      if(this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+    }
+    draw(){
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(201,168,76,${this.opacity})`;
+      ctx.fill();
+    }
+  }
+  
+  for(let i = 0; i < 80; i++) particles.push(new Particle());
+  
+  function animate(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => { p.update(); p.draw(); });
+    requestAnimationFrame(animate);
+  }
+  animate();
+})();
+
+// ===========================
+// INIT AOS
+// ===========================
+AOS.init({ duration: 700, once: true, offset: 60 });
+
+// ===========================
+// NAVBAR SCROLL
+// ===========================
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('mainNavbar');
+  const st = document.getElementById('scrollTop');
+  if(window.scrollY > 80) {
+    nav.classList.add('scrolled');
+    st.classList.add('visible');
+  } else {
+    nav.classList.remove('scrolled');
+    st.classList.remove('visible');
+  }
+});
+
+// ===========================
+// SMOOTH SCROLL NAVBAR
+// ===========================
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); }
+    const nc = document.getElementById('navMenu');
+    if(nc.classList.contains('show')){
+      const tog = document.querySelector('.navbar-toggler');
+      tog.click();
+    }
+  });
+});
+
+// ===========================
+// COUNTER ANIMATION
+// ===========================
+function animateCounter(el, target){
+  let current = 0;
+  const step = Math.ceil(target / 50);
+  const interval = setInterval(() => {
+    current = Math.min(current + step, target);
+    el.textContent = current + (target >= 100 ? '+' : '');
+    if(current >= target) clearInterval(interval);
+  }, 40);
+}
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      const els = e.target.querySelectorAll('[data-count]');
+      els.forEach(el => animateCounter(el, parseInt(el.dataset.count)));
+      counterObserver.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.3});
+document.querySelectorAll('#hero,#stats').forEach(s => counterObserver.observe(s));
+
+// ===========================
+// GALLERY GENERATION
+// ===========================
+const galleryData = [
+  {src:'/Css/1.jpeg'},
+  {src:'/Css/2.jpeg'},
+  {src:'/Css/3.jpeg'},
+  {src:'/Css/4.jpeg'},
+  {src:'/Css/5.jpeg'},
+  {src:'/Css/6.jpeg'},
+  {src:'/Css/7.jpeg'},
+  {src:'/Css/8.jpeg'},
+  {src:'/Css/9.jpeg'},
+  {src:'/Css/10.jpeg'},
+  {src:'/Css/11.jpeg'},
+  {src:'/Css/12.jpeg'},
+  {src:'/Css/13.jpeg'},
+  {src:'/Css/14.jpeg'},
+  {src:'/Css/15.jpeg'},
+  {src:'/Css/16.jpeg'},
+  {src:'/Css/17.jpeg'}
+];
+
+const grid = document.getElementById('galleryGrid');
+galleryData.forEach((item, i) => {
+  const div = document.createElement('div');
+  div.className = 'gallery-item';
+  div.setAttribute('data-aos', 'zoom-in');
+  div.setAttribute('data-aos-delay', String((i % 4) * 80));
+  div.innerHTML = `
+    <img src="${item.src}" alt="${item.title}" loading="lazy">
+    <div class="gallery-item-overlay">
+    </div>
+    <div class="gallery-zoom-btn"><i class="fas fa-search-plus"></i></div>
+  `;
+  div.addEventListener('click', () => openLightbox(i));
+  grid.appendChild(div);
+});
+
+// ===========================
+// LIGHTBOX
+// ===========================
+let currentLb = 0;
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lightboxImg');
+
+function openLightbox(i){
+  currentLb = i;
+  lbImg.src = galleryData[i].src;
+  lbImg.alt = galleryData[i].title;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(){
+  lb.classList.remove('active');
+  document.body.style.overflow = '';
+}
+function navLightbox(dir){
+  currentLb = (currentLb + dir + galleryData.length) % galleryData.length;
+  lbImg.src = galleryData[currentLb].src;
+  lbImg.alt = galleryData[currentLb].title;
+}
+
+document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+document.getElementById('lbPrev').addEventListener('click', () => navLightbox(-1));
+document.getElementById('lbNext').addEventListener('click', () => navLightbox(1));
+lb.addEventListener('click', e => { if(e.target === lb) closeLightbox(); });
+document.addEventListener('keydown', e => {
+  if(!lb.classList.contains('active')) return;
+  if(e.key === 'Escape') closeLightbox();
+  if(e.key === 'ArrowLeft') navLightbox(1);
+  if(e.key === 'ArrowRight') navLightbox(-1);
+});
+
+// ===========================
+// SHOWCASE SWIPER
+// ===========================
+const showcaseImgs = [1,3,5,7,9,11,13,15,17];
+const sw = document.getElementById('showcaseWrapper');
+showcaseImgs.forEach(n => {
+  const s = document.createElement('div');
+  s.className = 'swiper-slide';
+  s.innerHTML = `<img src="Css/${n}.jpeg" alt="أعمال المخمل الملكي ${n}" loading="lazy">`;
+  sw.appendChild(s);
+});
+
+new Swiper('.swiper-showcase', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  autoplay: { delay: 3500, disableOnInteraction: false },
+  pagination: { el: '.swiper-pagination', clickable: true },
+  navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+  breakpoints: {
+    640: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 }
+  }
+});
+</script>
+</body>
+</html>
